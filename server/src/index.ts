@@ -60,14 +60,14 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
 
 // ─── Start ────────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
-  logger.info(`🚀 Resume Builder API running on http://localhost:${PORT}`);
-  logger.info(`📝 Health check: http://localhost:${PORT}/health`);
+  logger.info(` Resume Builder API running on http://localhost:${PORT}`);
+  logger.info(` Health check: http://localhost:${PORT}/health`);
 
   const hasGroqKey = !!process.env.GROQ_API_KEY && process.env.GROQ_API_KEY !== 'your_groq_api_key_here';
   if (!hasGroqKey) {
-    logger.warn('⚠️  No GROQ_API_KEY found. Only BYOK mode will work. Add your key to .env');
+    logger.warn(' No GROQ_API_KEY found. Only BYOK mode will work. Add your key to .env');
   } else {
-    logger.info('✅ Groq default key loaded — free tier active');
+    logger.info('Groq default key loaded — free tier active');
   }
 });
 

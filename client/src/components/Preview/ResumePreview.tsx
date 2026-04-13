@@ -8,6 +8,8 @@ import ClassicTemplate from '../../templates/classic';
 import MinimalTemplate from '../../templates/minimal';
 import CreativeTemplate from '../../templates/creative';
 import styles from './Preview.module.css';
+// @ts-ignore - html2pdf doesn't have official types
+import html2pdf from 'html2pdf.js';
 
 const TEMPLATES: { id: TemplateId; label: string; color: string }[] = [
   { id: 'modern', label: 'Modern', color: '#6366f1' },
@@ -25,14 +27,14 @@ export default function ResumePreview() {
   useEffect(() => {
     const handler = async () => {
       if (!previewRef.current) return;
-      // @ts-ignore — html2pdf loaded via CDN Script in index.html
-      if (typeof window.html2pdf === 'undefined') {
+      
+      if (false) {
         alert('PDF export is loading. Please try again in a moment.');
         return;
       }
       const name = resume.personal.fullName || 'Resume';
       // @ts-ignore
-      window.html2pdf()
+      html2pdf()
         .set({
           margin: [8, 8, 8, 8],
           filename: `${name.replace(/\s+/g, '_')}_Resume.pdf`,
