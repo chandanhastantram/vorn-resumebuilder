@@ -1,0 +1,314 @@
+.stepForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.stepHeader h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-1);
+}
+
+.stepHeader p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sectionDivider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sectionDivider::before,
+.sectionDivider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.tip {
+  padding: var(--space-3) var(--space-4);
+  background: rgba(16, 185, 129, 0.06);
+  border-left: 3px solid var(--brand-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.charCount {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+.charHint {
+  color: var(--warning);
+}
+
+/* AI Card */
+.aiCard {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.aiCardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-surface-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.aiSpark {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.aiCardBody {
+  padding: var(--space-4);
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.aiCardBody .form-input {
+  flex: 1;
+}
+
+.errorMsg {
+  padding: var(--space-2) var(--space-4);
+  padding-bottom: var(--space-3);
+  font-size: 0.8125rem;
+  color: var(--error);
+}
+
+/* Entry Cards (experience, education, projects) */
+.entryCard {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.entryCard:hover {
+  border-color: var(--brand-primary);
+}
+
+.entryHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  cursor: pointer;
+  background: var(--bg-surface-2);
+  user-select: none;
+}
+
+.grip {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.entryTitle {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.entryTitle strong {
+  color: var(--text-primary);
+}
+
+.entryTitle span {
+  color: var(--text-muted);
+}
+
+.entryMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.entryBody {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-top: 1px solid var(--border);
+  animation: fadeIn var(--transition-fast) both;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.checkRow input[type='checkbox'] {
+  accent-color: var(--brand-primary);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* Bullets */
+.bulletHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bulletHint {
+  font-size: 0.75rem;
+  color: var(--brand-primary);
+  font-weight: 500;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.bulletRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.bulletDot {
+  margin-top: 10px;
+  color: var(--brand-primary);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.bulletInput {
+  flex: 1;
+  min-height: 60px;
+}
+
+.bulletActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+/* Skills */
+.presetsSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.presetsLabel {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.presetChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skillCard {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: border-color var(--transition-fast);
+}
+
+.skillCard:hover { border-color: var(--brand-primary); }
+
+.skillCardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.categoryNameInput {
+  flex: 1;
+  font-weight: 600;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skillTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.skillRemove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+
+.skillRemove:hover { color: var(--error); }
+
+.skillInputRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Misc */
+.addBtn {
+  width: 100%;
+  justify-content: center;
+  border-style: dashed;
+}
+
+.emptyState {
+  padding: var(--space-6);
+  text-align: center;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.spin {
+  animation: spin 0.7s linear infinite;
+}

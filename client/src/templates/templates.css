@@ -1,0 +1,382 @@
+/* =====================================================
+   Resume Templates — Print & Preview Styles
+   ===================================================== */
+
+/* ─── Base Template Styles (shared) ─────────────────── */
+.tmpl {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: #1a1a2e;
+  background: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+.tmpl-body {
+  padding: 18px 28px 24px;
+}
+
+.tmpl-section {
+  margin-bottom: 14px;
+}
+
+.tmpl-section-title {
+  font-size: 10.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.tmpl-divider {
+  height: 1.5px;
+  margin-bottom: 8px;
+}
+
+.tmpl-entry {
+  margin-bottom: 10px;
+}
+
+.tmpl-entry:last-child { margin-bottom: 0; }
+
+.tmpl-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3px;
+}
+
+.tmpl-entry-title {
+  font-weight: 700;
+  font-size: 9.5pt;
+}
+
+.tmpl-entry-subtitle {
+  font-size: 8.5pt;
+  color: #64748b;
+  margin-top: 1px;
+}
+
+.tmpl-entry-right {
+  text-align: right;
+}
+
+.tmpl-entry-date {
+  font-size: 8pt;
+  color: #64748b;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tmpl-gpa {
+  font-size: 7.5pt;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.tmpl-summary {
+  font-size: 9pt;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.tmpl-bullets {
+  margin: 5px 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.tmpl-bullets li {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 3px;
+  font-size: 8.5pt;
+  line-height: 1.4;
+  color: #334155;
+}
+
+.tmpl-bullets li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  opacity: 0.7;
+}
+
+.tmpl-edu-extra {
+  font-size: 8pt;
+  color: #64748b;
+  margin-top: 3px;
+  font-style: italic;
+}
+
+.tmpl-skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tmpl-skill-cat {
+  font-size: 8.5pt;
+  line-height: 1.4;
+}
+
+.tmpl-skill-cat-name {
+  font-weight: 700;
+  margin-right: 4px;
+  color: #1e293b;
+}
+
+.tmpl-skill-list { color: #475569; }
+
+.tmpl-proj-desc {
+  font-size: 8.5pt;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.tmpl-proj-links {
+  font-weight: 400;
+  font-size: 8pt;
+}
+
+.tmpl-proj-links a {
+  color: #10b981;
+  text-decoration: none;
+}
+
+.tmpl-cert {
+  font-size: 8.5pt;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tmpl-cert-name { font-weight: 600; }
+.tmpl-cert-issuer { color: #64748b; }
+.tmpl-cert-date { margin-left: auto; color: #94a3b8; font-size: 8pt; }
+
+/* ─── Modern Template ────────────────────────────────── */
+.modern-tmpl { }
+
+.modern-header {
+  background: #0f172a;
+  color: white;
+  padding: 20px 28px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.modern-name {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 22pt;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.modern-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 8pt;
+  color: rgba(255,255,255,0.8);
+}
+
+.modern-contact span + span::before {
+  content: '·';
+  margin-right: 12px;
+}
+
+.modern-header-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-end;
+  align-self: center;
+  max-width: 200px;
+  flex-shrink: 0;
+}
+
+.modern-skill-chip {
+  padding: 2px 8px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 9999px;
+  font-size: 7.5pt;
+  color: rgba(255,255,255,0.9);
+  white-space: nowrap;
+}
+
+.modern-title { color: #0f172a; }
+.modern-divider { background: #10b981; }
+.modern-accent { color: #059669; }
+
+/* ─── Classic Template ───────────────────────────────── */
+.classic-tmpl {
+  font-family: 'Times New Roman', 'Georgia', serif;
+}
+
+.classic-header {
+  text-align: center;
+  padding: 20px 28px 12px;
+  border-bottom: 2px solid #1a1a2e;
+}
+
+.classic-name {
+  font-family: 'Georgia', serif;
+  font-size: 24pt;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.classic-contact {
+  font-size: 9pt;
+  color: #334155;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+
+.classic-contact span + span::before {
+  content: '|';
+  margin-right: 10px;
+  color: #94a3b8;
+}
+
+.classic-title {
+  color: #1a1a2e;
+  font-family: 'Georgia', serif;
+}
+
+.classic-divider { background: #1a1a2e; }
+
+/* ─── Minimal Template ───────────────────────────────── */
+.minimal-tmpl {
+  font-family: 'Inter', sans-serif;
+}
+
+.minimal-header {
+  padding: 24px 32px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 4px;
+}
+
+.minimal-name {
+  font-size: 20pt;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.3px;
+}
+
+.minimal-contact {
+  text-align: right;
+  font-size: 8pt;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.minimal-title {
+  font-size: 9.5pt;
+  color: #10b981;
+  font-weight: 700;
+}
+
+.minimal-divider { background: #e2e8f0; }
+
+.minimal-tmpl .tmpl-body { padding: 12px 32px 24px; }
+
+.minimal-tmpl .tmpl-bullets li::before { content: '–'; }
+
+/* ─── Creative Template ──────────────────────────────── */
+.creative-tmpl {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 1123px;
+}
+
+.creative-sidebar {
+  background: #1e293b;
+  color: white;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.creative-avatar {
+  width: 70px;
+  height: 70px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24pt;
+  font-weight: 800;
+  color: white;
+  margin: 0 auto 8px;
+}
+
+.creative-name {
+  font-size: 14pt;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.creative-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.creative-contact-item {
+  font-size: 7.5pt;
+  color: rgba(255,255,255,0.8);
+  word-break: break-all;
+}
+
+.creative-sidebar-section h3 {
+  font-size: 8.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f59e0b;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.creative-skill-item {
+  font-size: 8pt;
+  color: rgba(255,255,255,0.8);
+  padding: 2px 0;
+}
+
+.creative-main {
+  padding: 20px 22px;
+}
+
+.creative-title {
+  color: #f59e0b;
+  font-size: 10.5pt;
+  font-weight: 800;
+}
+
+.creative-divider { background: #f59e0b; height: 2px; }
+
+.creative-tmpl .tmpl-accent { color: #f59e0b; }

@@ -1,0 +1,93 @@
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-surface-2);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: var(--space-4);
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.templatePicker {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.templateBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.templateBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--template-color);
+}
+
+.templateActive {
+  background: color-mix(in srgb, var(--template-color) 10%, transparent) !important;
+  border-color: var(--template-color) !important;
+  color: var(--template-color) !important;
+}
+
+.templateDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--template-color);
+  flex-shrink: 0;
+}
+
+/* Scrollable preview area */
+.previewScroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+}
+
+.pageWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* A4 page dimensions at 96dpi */
+.page {
+  width: 794px;
+  min-height: 1123px;
+  background: #ffffff;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
+}
+
+.page:hover {
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.3);
+}

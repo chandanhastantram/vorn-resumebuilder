@@ -1,0 +1,111 @@
+import { ResumeData } from '../types/resume';
+import './templates.css';
+
+interface Props { resume: ResumeData; }
+
+export default function ClassicTemplate({ resume }: Props) {
+  const { personal, summary, experience, education, skills, projects, certifications, sectionOrder } = resume;
+
+  const renderSection = (section: string) => {
+    switch (section) {
+      case 'summary':
+        return summary ? (
+          <section key="summary" className="tmpl-section">
+            <h2 className="tmpl-section-title classic-title">Objective</h2>
+            <div className="tmpl-divider classic-divider" />
+            <p className="tmpl-summary" style={{ fontStyle: 'italic' }}>{summary}</p>
+          </section>
+        ) : null;
+      case 'experience':
+        return experience.length > 0 ? (
+          <section key="experience" className="tmpl-section">
+            <h2 className="tmpl-section-title classic-title">Professional Experience</h2>
+            <div className="tmpl-divider classic-divider" />
+            {experience.map(exp => (
+              <div key={exp.id} className="tmpl-entry">
+                <div className="tmpl-entry-header">
+                  <div>
+                    <div className="tmpl-entry-title">{exp.position}, {exp.company}</div>
+                    <div className="tmpl-entry-subtitle">{exp.location}</div>
+                  </div>
+                  <div className="tmpl-entry-date" style={{ fontStyle: 'italic' }}>{exp.startDate} – {exp.current ? 'Present' : exp.endDate}</div>
+                </div>
+                {exp.bullets.filter(b => b.trim()).length > 0 && (
+                  <ul className="tmpl-bullets">{exp.bullets.filter(b => b.trim()).map((b, i) => <li key={i}>{b}</li>)}</ul>
+                )}
+              </div>
+            ))}
+          </section>
+        ) : null;
+      case 'education':
+        return education.length > 0 ? (
+          <section key="education" className="tmpl-section">
+            <h2 className="tmpl-section-title classic-title">Education</h2>
+            <div className="tmpl-divider classic-divider" />
+            {education.map(edu => (
+              <div key={edu.id} className="tmpl-entry">
+                <div className="tmpl-entry-header">
+                  <div>
+                    <div className="tmpl-entry-title">{edu.degree}{edu.field ? `, ${edu.field}` : ''}</div>
+                    <div className="tmpl-entry-subtitle">{edu.institution}</div>
+                  </div>
+                  <div className="tmpl-entry-right">
+                    <div className="tmpl-entry-date">{edu.endDate}</div>
+                    {edu.gpa && <div className="tmpl-gpa">GPA: {edu.gpa}</div>}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </section>
+        ) : null;
+      case 'skills':
+        return skills.length > 0 ? (
+          <section key="skills" className="tmpl-section">
+            <h2 className="tmpl-section-title classic-title">Skills</h2>
+            <div className="tmpl-divider classic-divider" />
+            <div className="tmpl-skills-grid">
+              {skills.map(cat => (
+                <div key={cat.id} className="tmpl-skill-cat">
+                  <span className="tmpl-skill-cat-name">{cat.name}:</span>
+                  <span className="tmpl-skill-list">{cat.skills.join(', ')}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null;
+      case 'projects':
+        return projects.length > 0 ? (
+          <section key="projects" className="tmpl-section">
+            <h2 className="tmpl-section-title classic-title">Projects</h2>
+            <div className="tmpl-divider classic-divider" />
+            {projects.map(proj => (
+              <div key={proj.id} className="tmpl-entry">
+                <div className="tmpl-entry-title">{proj.name}{proj.technologies.length ? ` (${proj.technologies.join(', ')})` : ''}</div>
+                {proj.description && <p className="tmpl-proj-desc">{proj.description}</p>}
+                {proj.bullets.filter(b => b.trim()).length > 0 && (
+                  <ul className="tmpl-bullets">{proj.bullets.filter(b => b.trim()).map((b, i) => <li key={i}>{b}</li>)}</ul>
+                )}
+              </div>
+            ))}
+          </section>
+        ) : null;
+      default: return null;
+    }
+  };
+
+  return (
+    <div className="tmpl classic-tmpl">
+      <header className="classic-header">
+        {personal.fullName && <h1 className="classic-name">{personal.fullName}</h1>}
+        <div className="classic-contact">
+          {personal.email && <span>{personal.email}</span>}
+          {personal.phone && <span>{personal.phone}</span>}
+          {personal.location && <span>{personal.location}</span>}
+          {personal.linkedin && <span>{personal.linkedin}</span>}
+          {personal.github && <span>{personal.github}</span>}
+        </div>
+      </header>
+      <div className="tmpl-body">{sectionOrder.map(s => renderSection(s))}</div>
+    </div>
+  );
+}
